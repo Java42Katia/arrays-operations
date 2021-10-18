@@ -48,6 +48,7 @@ class ArraysOperationsTests {
 		assertArrayEquals(expectedStr, actualStr);
 		assertEquals(WRONG_INDEX, remove(arStr, 5, actualStr));
 		assertEquals(WRONG_RESULT_LENGTH, remove(arStr, 1, new String[arStr.length]));
+		// V.R. It isn't tested for Integer
 	}
 
 	@Test
@@ -58,13 +59,13 @@ class ArraysOperationsTests {
 		String actualStr[] = new String[arStr.length + 1];
 		insertSorted(arStr, "Katia", actualStr);
 		assertArrayEquals(expectedStr, actualStr);
-		
 		// tests Integer
 		Integer arInt[] = {12, 65, 78, 98, 453};
 		Integer expectedInt[] = {0, 12, 65, 78, 98, 453};
 		Integer actualInt[] = new Integer[arInt.length + 1];
 		insertSorted(arInt, 0, actualInt);
 		assertArrayEquals(expectedInt, actualInt);		
+		// V.R. Return codes are not tested as for String, as for Integer
 	}
 
 	@Test
@@ -74,6 +75,8 @@ class ArraysOperationsTests {
 		String actualStr[] = new String[arStr.length + 1];
 		addLast(arStr, INSERTED_STRING, actualStr);
 		assertArrayEquals(expectedStr, actualStr);
+		// V.R. It isn't tested for Integer
+		// V.R. Return codes are not tested
 	}
 
 	@Test
@@ -83,6 +86,8 @@ class ArraysOperationsTests {
 		String actualStr[] = new String[arStr.length + 1];
 		addFirst(arStr, INSERTED_STRING, actualStr);
 		assertArrayEquals(expectedStr, actualStr);
+		// V.R. It isn't tested for Integer
+		// V.R. Return codes are not tested
 	}
 
 }

@@ -44,7 +44,12 @@ public static <T> String insertSorted (T[] sortedArray, T element, T[] res) {
 		resStr = insert(sortedArray, element, 0 - index - 1,  res);
 	}
 	return resStr;
-	
+	/* V.R. May by the following is simpler
+	if(index < 0) {
+		index = -(index+1);
+	}
+	return insert(sortedArray, element, index, res);
+	 */
 }
 public static <T> String addLast(T[] array, T element, T[]res) {
 	return insert(array, element, array.length, res);
