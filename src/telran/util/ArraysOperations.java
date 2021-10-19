@@ -37,13 +37,11 @@ public static <T> String remove(T[] array, int index, T[] res) {
 public static <T> String insertSorted (T[] sortedArray, T element, T[] res) {
 	String resStr = "";
 	int index = Arrays.binarySearch(sortedArray, element, (Comparator<T>)Comparator.naturalOrder());
-	if (index >= 0) {
-		resStr = insert(sortedArray, element, index, res);
+//	 V.R. May by the following is simpler [kG] true
+	if(index < 0) {
+		index = -(index + 1);
 	}
-	if (index < 0) {
-		resStr = insert(sortedArray, element, 0 - index - 1,  res);
-	}
-	return resStr;
+	return insert(sortedArray, element, index, res);
 	
 }
 public static <T> String addLast(T[] array, T element, T[]res) {
